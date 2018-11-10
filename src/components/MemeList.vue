@@ -22,16 +22,18 @@
         :key="meme.generatorID"
         class="column is-3-desktop is-4-tablet is-full-mobile is-inline-block-mobile"
       >
-        <div class="card">
-          <div class="card-image">
-            <figure class="image is-square">
-              <img :src="meme.imageUrl" :alt="meme.displayName" />
-            </figure>
+        <router-link :to="{ path: '/generator', query: { image: meme.imageUrl } }">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-square">
+                <img :src="meme.imageUrl" :alt="meme.displayName" />
+              </figure>
+            </div>
+            <div class="card-content overflow-content">
+              <strong>{{ meme.displayName }}</strong>
+            </div>
           </div>
-          <div class="card-content overflow-content">
-            <strong>{{ meme.displayName }}</strong>
-          </div>
-        </div>
+        </router-link>
       </div>
     </div>
   </div>
