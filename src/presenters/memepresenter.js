@@ -13,8 +13,8 @@ export default class {
     for (let i = 0; i < 5; i++) {
       this.memes = this.memes.concat(await MemeAPI.getByPopular(this.page))
       this.page += 1
+      this.loading = false
     }
-    this.loading = false
   }
   searchByKeyword = async () => {
     this.loading = true
@@ -24,9 +24,14 @@ export default class {
       return this.init()
     }
     for (let i = 0; i < 5; i++) {
-      this.memes = this.memes.concat(await MemeAPI.getByKeyword(this.keyword, 0))
+      const memes = this.memes.concat(await MemeAPI.getByKeyword(this.keyword, 0))
+      this.memes = memes.filter((meme, index, array) =>
+        index === array.findIndex((t) => (
+          t.generatorID === meme.generatorID
+        ))
+      )
       this.page += 1
+      this.loading = false
     }
-    this.loading = false
   }
 }
