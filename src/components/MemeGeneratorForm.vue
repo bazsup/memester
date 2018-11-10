@@ -24,6 +24,7 @@
                 @change="sourceUrlChange"
               />
             </div>
+            <p class="help">You can put your image source URL from outside</p>
           </div>
           <div class="columns">
             <div class="column is-6">
@@ -132,6 +133,10 @@ export default {
   },
   mounted () {
     const canvas = document.querySelector('#canvas')
+    const imagePath = this.$route.query.image
+    if (imagePath) {
+      this.src = imagePath
+    }
     this.memeGen = new MemeGenerator({
       canvas,
       imageSource: this.src,
