@@ -7,6 +7,8 @@
     </div>
     <div class="columns">
       <div class="column is-6">
+        <strong>How to save: </strong>
+        <span>Right click to image and "Save image as..."</span>
         <canvas id="canvas" crossorigin="Anonymous">
           Canvas requires a browser that supports HTML5.
         </canvas>
@@ -113,8 +115,8 @@ export default {
       topTextSize: 10,
       bottomTextSize: 10,
       memeGen: null,
-      topText: 'hello world',
-      bottomText: 'Bottom',
+      topText: 'hello, memester',
+      bottomText: 'bottom is here',
       src: 'https://i.memeful.com/media/post/lMzZpAM_700wa_0.gif'
     }
   },
