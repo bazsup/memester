@@ -1,4 +1,4 @@
-# public-api-connector
+# memester
 
 ## Project setup
 ```
