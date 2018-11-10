@@ -6,7 +6,7 @@
         <input
           type="text"
           v-model="presenter.keyword"
-          @input="presenter.searchByKeyword"
+          @keydown.enter="presenter.searchByKeyword"
           class="input is-medium"
           placeholder="Search.."
         />
