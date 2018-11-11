@@ -14,6 +14,7 @@ export default {
       url: 'Generators_Select_ByPopular',
       params: {
         pageIndex: page,
+        pageSize: 25,
         apiKey: 'demo'
       }
     })
@@ -26,6 +27,7 @@ export default {
       params: {
         q: word,
         pageIndex: page,
+        pageSize: 25,
         apiKey: 'demo'
       }
     })
