@@ -23,6 +23,12 @@
   </aside>
 </template>
 
+<script>
+export default {
+  name: 'Sidebar'
+}
+</script>
+
 <style scoped>
 .menu-list a.is-active {
   background-color: #477fb0;
