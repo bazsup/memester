@@ -16,11 +16,13 @@
       <div class="column is-6">
         <fieldset>
           <div class="field">
-            <label class="label">Image URL</label>
+            <label for="image-url-input" class="label">Image URL</label>
             <div class="control">
               <input
+                id="image-url-input"
                 class="input"
                 type="text"
+                name="image-url"
                 placeholder="Image URL"
                 v-model="src"
                 @change="sourceUrlChange"
@@ -36,6 +38,7 @@
                   id="top-text-input"
                   class="input"
                   type="text"
+                  name="top-text"
                   placeholder="top text"
                   v-model="topText"
                   @input="textUpdate"
@@ -51,6 +54,7 @@
                     id="top-text-size-slider-input"
                     class="slider is-fullwidth is-info"
                     type="range"
+                    name="top-text-size"
                     step="2"
                     v-model="topTextSize"
                     min="6"
@@ -69,21 +73,22 @@
                   id="bottom-text-input"
                   class="input"
                   type="text"
+                  name="bottom-text"
                   placeholder="bottom text"
                   v-model="bottomText"
                   @input="textUpdate"
                 />
               </div>
-
             </div>
             <div class="column is-6">
               <div class="field">
-                <label for="bottom-text-size-slider-input" class="label">Top text size: {{bottomTextSize}}</label>
+                <label for="bottom-text-size-slider-input" class="label">Bottom text size: {{bottomTextSize}}</label>
                 <div class="control">
                   <input
                     id="bottom-text-size-slider-input"
                     class="slider is-fullwidth is-info"
                     type="range"
+                    name="bottom-text-size"
                     v-model="bottomTextSize"
                     min="6"
                     max="20"
@@ -105,10 +110,7 @@ import Presenter from '@/presenters/memepresenter'
 import MemeGenerator from '@/tools/memegenerator'
 
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  },
+  name: 'MemeGenerator',
   data () {
     return {
       presenter: new Presenter(this),
